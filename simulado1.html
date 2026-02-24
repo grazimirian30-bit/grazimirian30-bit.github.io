@@ -1,0 +1,243 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Simulado – Módulo 1</title>
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:0;padding:20px}
+.container{max-width:900px;margin:auto;background:white;padding:24px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.question{margin-bottom:28px}
+label{display:block;margin:6px 0;cursor:pointer}
+button{padding:12px 24px;border:none;border-radius:10px;background:#2563eb;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#1e4fd1}
+.result{margin-top:24px;padding:16px;border-radius:12px;background:#eef2ff}
+.correct{color:#059669;font-weight:bold}
+.wrong{color:#dc2626;font-weight:bold}
+.tipo{font-size:13px;color:#6b7280;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Simulado – Módulo 1</h1>
+
+<button onclick="voltar()">⬅️ Voltar</button>
+
+<form id="quizForm"></form>
+
+<button onclick="corrigir()">Corrigir</button>
+
+<div id="resultado" class="result" style="display:none"></div>
+</div>
+
+<script>
+function voltar(){
+  window.location.href="index.html";
+}
+
+// ✅ GABARITO EQUILIBRADO (A/B/C/D)
+const questoes = [
+
+{
+tipo:"Objetiva",
+pergunta:"1. A ética é entendida principalmente como:",
+opcoes:[
+"Uma reflexão crítica sobre a ação humana.", // A
+"Um conjunto de costumes herdados.",
+"Uma lei jurídica obrigatória.",
+"Uma tradição religiosa."
+],
+correta:0,
+explicacao:"A ética investiga racionalmente a conduta humana."
+},
+
+{
+tipo:"Asserção e razão",
+pergunta:`2. I. A ética busca promover o bem comum.
+
+PORQUE
+
+II. Analisa as consequências das ações humanas.`,
+opcoes:[
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // B
+"A asserção I é verdadeira, e a II é falsa.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são falsas."
+],
+correta:1,
+explicacao:"A análise das ações permite promover o bem comum."
+},
+
+{
+tipo:"Objetiva",
+pergunta:"3. A moral diferencia-se da ética porque a moral:",
+opcoes:[
+"É sempre universal.",
+"É puramente científica.",
+"Corresponde a costumes de um grupo.", // C
+"Elimina tradições."
+],
+correta:2,
+explicacao:"Moral = hábitos e costumes socialmente aceitos."
+},
+
+{
+tipo:"Asserção e razão",
+pergunta:`4. I. O hedonismo de Epicuro valoriza o prazer.
+
+PORQUE
+
+II. Defende o equilíbrio dos prazeres para alcançar a tranquilidade.`,
+opcoes:[
+"As asserções I e II são falsas.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // C
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"A asserção I é verdadeira, e a II é falsa."
+],
+correta:2,
+explicacao:"Epicuro defendia prazer moderado (ataraxia)."
+},
+
+{
+tipo:"Objetiva",
+pergunta:"5. O contratualismo afirma que a sociedade se mantém por meio de:",
+opcoes:[
+"Prazer individual.",
+"Acordos e leis.", // B
+"Impulsos naturais.",
+"Tradições familiares."
+],
+correta:1,
+explicacao:"Contrato social garante ordem e estabilidade."
+},
+
+{
+tipo:"Asserção e razão",
+pergunta:`6. I. Kant defende uma moral baseada na razão.
+
+PORQUE
+
+II. O imperativo categórico propõe leis morais universais.`,
+opcoes:[
+"A asserção I é verdadeira, e a II é falsa.",
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"As asserções I e II são falsas.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // D
+"A asserção I é falsa, e a II é verdadeira."
+],
+correta:3,
+explicacao:"Para Kant, a razão fundamenta a lei moral universal."
+},
+
+{
+tipo:"Objetiva",
+pergunta:"7. O utilitarismo avalia as ações principalmente pelos:",
+opcoes:[
+"Costumes tradicionais.",
+"Resultados e consequências.", // B
+"Mandamentos religiosos.",
+"Impulsos individuais."
+],
+correta:1,
+explicacao:"Utilitarismo = maximização do bem-estar."
+},
+
+{
+tipo:"Asserção e razão",
+pergunta:`8. I. Habermas valoriza o diálogo.
+
+PORQUE
+
+II. O consenso racional é base da ação comunicativa.`,
+opcoes:[
+"As asserções I e II são verdadeiras, e a II justifica a I.", // A
+"As asserções I e II são falsas.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"A asserção I é verdadeira, e a II é falsa."
+],
+correta:0,
+explicacao:"O consenso pelo diálogo é central em Habermas."
+},
+
+{
+tipo:"Objetiva",
+pergunta:"9. O relativismo moral sustenta que:",
+opcoes:[
+"Há uma única moral universal.",
+"Os valores dependem do contexto cultural.", // B
+"A razão define tudo.",
+"As leis são absolutas."
+],
+correta:1,
+explicacao:"Relativismo nega universalidade moral."
+},
+
+{
+tipo:"Objetiva",
+pergunta:"10. O senso moral caracteriza-se por:",
+opcoes:[
+"Reflexão filosófica profunda.",
+"Reação imediata baseada em valores.", // B
+"Cálculo utilitarista.",
+"Contrato político."
+],
+correta:1,
+explicacao:"Senso moral é resposta espontânea."
+}
+
+];
+
+const form=document.getElementById("quizForm");
+
+questoes.forEach((q,i)=>{
+const div=document.createElement("div");
+div.className="question";
+
+let html=`<div class="tipo">Tipo: ${q.tipo}</div>`;
+html+=`<h3>${q.pergunta.replace(/\n/g,"<br>")}</h3>`;
+
+q.opcoes.forEach((op,j)=>{
+html+=`<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
+});
+
+html+=`<div id="exp${i}"></div>`;
+div.innerHTML=html;
+form.appendChild(div);
+});
+
+function corrigir(){
+let acertos=0;
+
+questoes.forEach((q,i)=>{
+const marcada=document.querySelector(`input[name="q${i}"]:checked`);
+const exp=document.getElementById(`exp${i}`);
+
+if(!marcada){
+exp.innerHTML='<span class="wrong">⚠️ Não respondida</span>';
+return;
+}
+
+if(parseInt(marcada.value)===q.correta){
+acertos++;
+exp.innerHTML=`<span class="correct">✔️ Correta.</span> ${q.explicacao}`;
+}else{
+exp.innerHTML=`<span class="wrong">❌ Errada.</span> ${q.explicacao}`;
+}
+});
+
+document.getElementById("resultado").style.display="block";
+document.getElementById("resultado").innerHTML=`<h2>Você acertou ${acertos} de ${questoes.length}</h2>`;
+}
+</script>
+</body>
+</html>

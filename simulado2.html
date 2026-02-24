@@ -1,0 +1,231 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Simulado – Módulo 2</title>
+<style>
+body{font-family:Arial;background:#f4f6f8;margin:0;padding:20px}
+.container{max-width:900px;margin:auto;background:white;padding:24px;border-radius:16px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.question{margin-bottom:28px}
+label{display:block;margin:6px 0;cursor:pointer}
+button{padding:12px 24px;border:none;border-radius:10px;background:#2563eb;color:white;font-size:16px;cursor:pointer}
+button:hover{background:#1e4fd1}
+.result{margin-top:24px;padding:16px;border-radius:12px;background:#eef2ff}
+.correct{color:#059669;font-weight:bold}
+.wrong{color:#dc2626;font-weight:bold}
+.tipo{font-size:13px;color:#6b7280;margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>Simulado – Módulo 2</h1>
+<button onclick="voltar()">⬅️ Voltar</button>
+<form id="quizForm"></form>
+<button onclick="corrigir()">Corrigir</button>
+<div id="resultado" class="result" style="display:none"></div>
+</div>
+
+<script>
+function voltar(){window.location.href="index.html"}
+
+// ✅ GABARITO EQUILIBRADO (A,B,C,D distribuídos)
+const questoes=[
+{
+tipo:"Objetiva",
+pergunta:"1. No contexto do Módulo 2, ser profissional implica principalmente:",
+opcoes:[
+"Responder a necessidades sociais por meio da profissão.", // A
+"Apenas dominar técnicas específicas da área.",
+"Buscar reconhecimento individual acima de tudo.",
+"Atuar de forma isolada da sociedade."
+],
+correta:0,
+explicacao:"A profissão existe para atender demandas sociais."
+},
+{
+tipo:"Asserção e razão",
+pergunta:`2. I. A atuação profissional possui dimensão ética.
+
+PORQUE
+
+II. As decisões no trabalho podem afetar outras pessoas e a coletividade.`,
+opcoes:[
+"As asserções I e II são verdadeiras, e a II justifica a I.", // A
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"A asserção I é verdadeira, e a II é falsa.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são falsas."
+],
+correta:0,
+explicacao:"O trabalho impacta terceiros, por isso há dimensão ética."
+},
+{
+tipo:"Objetiva",
+pergunta:"3. Segundo o módulo, as regras morais no ambiente profissional servem para:",
+opcoes:[
+"Eliminar conflitos definitivamente.",
+"Orientar comportamentos esperados nas relações de trabalho.", // B
+"Substituir completamente as leis.",
+"Garantir apenas produtividade."
+],
+correta:1,
+explicacao:"Regras morais orientam condutas sociais."
+},
+{
+tipo:"Asserção e razão",
+pergunta:`4. I. A sociedade digital trouxe novos dilemas éticos.
+
+PORQUE
+
+II. O uso das tecnologias ampliou o alcance das ações humanas.`,
+opcoes:[
+"As asserções I e II são falsas.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // C
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"A asserção I é verdadeira, e a II é falsa."
+],
+correta:2,
+explicacao:"Tecnologia amplia impactos e cria novos dilemas éticos."
+},
+{
+tipo:"Objetiva",
+pergunta:"5. Um dos riscos éticos das redes digitais é:",
+opcoes:[
+"Aumento da comunicação.",
+"Facilidade de acesso à informação.",
+"Exposição indevida de dados pessoais.", // C
+"Ampliação do trabalho remoto."
+],
+correta:2,
+explicacao:"Privacidade é questão central da ética digital."
+},
+{
+tipo:"Asserção e razão",
+pergunta:`6. I. A competência profissional envolve conhecimento, habilidade e atitude.
+
+PORQUE
+
+II. O desempenho técnico isolado não garante atuação ética e responsável.`,
+opcoes:[
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são falsas.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // D
+"A asserção I é verdadeira, e a II é falsa."
+],
+correta:3,
+explicacao:"O módulo enfatiza o tripé da competência profissional."
+},
+{
+tipo:"Objetiva",
+pergunta:"7. No ambiente de trabalho digital, agir eticamente inclui:",
+opcoes:[
+"Compartilhar qualquer informação disponível.",
+"Ignorar políticas de segurança.",
+"Respeitar a confidencialidade dos dados.", // C
+"Priorizar velocidade sobre responsabilidade."
+],
+correta:2,
+explicacao:"Confidencialidade é princípio básico."
+},
+{
+tipo:"Asserção e razão",
+pergunta:`8. I. A tecnologia não elimina a responsabilidade ética dos profissionais.
+
+PORQUE
+
+II. As ferramentas digitais são neutras quanto aos seus impactos sociais.`,
+opcoes:[
+"A asserção I é verdadeira, e a II é falsa.", // A
+"As asserções I e II são verdadeiras, e a II justifica a I.",
+"As asserções I e II são falsas.",
+"A asserção I é falsa, e a II é verdadeira.",
+"As asserções I e II são verdadeiras, mas a II não justifica a I."
+],
+correta:0,
+explicacao:"Tecnologia não é neutra; gera impactos reais."
+},
+{
+tipo:"Objetiva",
+pergunta:"9. A ética na atuação profissional contemporânea exige principalmente:",
+opcoes:[
+"Foco exclusivo em resultados financeiros.",
+"Equilíbrio entre eficiência e responsabilidade social.", // B
+"Independência total das normas sociais.",
+"Prioridade absoluta à automação."
+],
+correta:1,
+explicacao:"O profissional ético equilibra eficiência e impacto social."
+},
+{
+tipo:"Asserção e razão",
+pergunta:`10. I. A cidadania no mundo atual inclui o comportamento online.
+
+PORQUE
+
+II. O espaço digital tornou-se parte da vida pública e social.`,
+opcoes:[
+"As asserções I e II são verdadeiras, mas a II não justifica a I.",
+"As asserções I e II são falsas.",
+"As asserções I e II são verdadeiras, e a II justifica a I.", // C
+"A asserção I é falsa, e a II é verdadeira.",
+"A asserção I é verdadeira, e a II é falsa."
+],
+correta:2,
+explicacao:"Cidadania digital é parte da vida contemporânea."
+}
+];
+
+const form=document.getElementById("quizForm");
+
+questoes.forEach((q,i)=>{
+const div=document.createElement("div");
+div.className="question";
+
+let html=`<div class="tipo">Tipo: ${q.tipo}</div>`;
+html+=`<h3>${q.pergunta.replace(/\n/g,"<br>")}</h3>`;
+
+q.opcoes.forEach((op,j)=>{
+html+=`<label><input type="radio" name="q${i}" value="${j}"> ${op}</label>`;
+});
+
+html+=`<div id="exp${i}"></div>`;
+div.innerHTML=html;
+form.appendChild(div);
+});
+
+function corrigir(){
+let acertos=0;
+
+questoes.forEach((q,i)=>{
+const marcada=document.querySelector(`input[name="q${i}"]:checked`);
+const exp=document.getElementById(`exp${i}`);
+
+if(!marcada){
+exp.innerHTML='<span class="wrong">⚠️ Não respondida</span>';
+return;
+}
+
+if(parseInt(marcada.value)===q.correta){
+acertos++;
+exp.innerHTML=`<span class="correct">✔️ Correta.</span> ${q.explicacao}`;
+}else{
+exp.innerHTML=`<span class="wrong">❌ Errada.</span> ${q.explicacao}`;
+}
+});
+
+document.getElementById("resultado").style.display="block";
+document.getElementById("resultado").innerHTML=`<h2>Você acertou ${acertos} de ${questoes.length}</h2>`;
+}
+</script>
+</body>
+</html>
