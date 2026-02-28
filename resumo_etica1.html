@@ -1,0 +1,582 @@
+button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function irPara(pagina){
+  window.location.href = pagina;
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Central PRO — Ética e Cidadania</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+:root{
+  --bg:#f4f6f8;
+  --card:#ffffff;
+  --text:#222;
+  --primary:#2563eb;
+  --turbo:#fff7ed;
+}
+
+.dark{
+  --bg:#0f172a;
+  --card:#111827;
+  --text:#e5e7eb;
+  --turbo:#3b2f1a;
+}
+
+body{
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  margin:0;
+  padding:20px;
+  transition:.3s;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  background:var(--card);
+  padding:25px;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+h1{text-align:center;}
+
+.topbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-bottom:15px;
+}
+
+.search{
+  flex:1;
+  padding:12px;
+  border-radius:8px;
+  border:1px solid #ccc;
+}
+
+button{
+  padding:12px 16px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:var(--primary);
+  color:white;
+  font-weight:bold;
+}
+
+/* ACCORDION */
+.section-btn{
+  width:100%;
+  text-align:left;
+  margin:10px 0;
+  font-size:18px;
+}
+
+.content{
+  display:none;
+  padding:20px;
+  margin-bottom:15px;
+  border-left:6px solid var(--primary);
+  background:rgba(0,0,0,.03);
+  border-radius:10px;
+  line-height:1.65;
+}
+
+/* TURBO */
+.turbo{
+  background:var(--turbo);
+  border-left:6px solid #f97316;
+  padding:15px;
+  border-radius:10px;
+  margin:15px 0;
+}
+
+/* MAPA */
+.mapa{
+  background:#eef3ff;
+  padding:15px;
+  border-radius:10px;
+  margin-top:15px;
+  font-family:"Courier New", monospace;
+  white-space:pre-line;
+}
+
+/* FLASHCARDS */
+.flash-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  margin-top:20px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+  
+  
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height:160px;
+  transition:transform .6s ease, box-shadow .3s ease;
+  transform-style:preserve-3d;
+  border-radius:16px;
+
+  /* 🔥 efeito 3D */
+  box-shadow:
+    0 12px 24px rgba(0,0,0,.18),
+    0 4px 8px rgba(0,0,0,.10);
+
+  background:var(--card);
+}
+.flashcard:hover .card-inner{
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:
+    0 22px 44px rgba(0,0,0,.25),
+    0 10px 18px rgba(0,0,0,.15);
+}
+.flashcard{
+  perspective:1000px;
+  cursor:pointer;
+}
+
+.card-inner{
+  position:relative;
+  width:100%;
+  height:150px;
+  transition:transform .6s;
+  transform-style:preserve-3d;
+}
+
+.flashcard.flip .card-inner{
+  transform:rotateY(180deg);
+}
+
+.card-face{
+  position:absolute;
+  width:100%;
+  height:100%;
+  backface-visibility:hidden;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px;
+  text-align:center;
+  font-weight:bold;
+}
+.card-front{ background:#4df007; color:white; }
+
+.card-back{
+  background:#ead80a;
+  color:#111;
+  transform:rotateY(180deg);
+}
+
+.progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:6px;
+  background:#c13109;
+  width:0%;
+  z-index:999;
+}
+
+.highlight{
+  background:yellow;
+  color:black;
+}
+
+@media(max-width:700px){
+  .topbar{flex-direction:column;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="container">
+
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<h1>📚 Central PRO — Ética e Cidadania</h1>
+
+<div class="topbar">
+<input class="search" id="busca" placeholder="🔎 Buscar no resumo..." onkeyup="buscar()">
+<button onclick="toggleDark()">🌙 Modo</button>
+</div>
+
+<!-- ================= UNIDADE 1 ================= -->
+<button class="section-btn" onclick="toggle('u1')">
+📘 Unidade 1 — Ética: sua essência e o cotidiano
+</button>
+
+<div id="u1" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Ética = reflexão racional • Moral = costumes •  
+Aristóteles → eudaimonia •  
+Senso moral = reação • Consciência moral = reflexão
+</div>
+
+<h3>🔷 Fundamentos da ética</h3>
+<p>
+A ética é um campo da filosofia que investiga os princípios que orientam o comportamento humano. Seu foco principal é compreender como devemos agir para promover o bem comum e a convivência social harmoniosa.
+</p>
+
+<p>
+Diferentemente das regras morais, que muitas vezes são seguidas por hábito, a ética exige reflexão crítica, análise das consequências e responsabilidade pelas decisões.
+</p>
+
+<h3>🧠 Características da ética</h3>
+<ul>
+<li>é racional e reflexiva</li>
+<li>analisa valores e normas</li>
+<li>busca o bem comum</li>
+<li>orienta decisões conscientes</li>
+<li>considera consequências das ações</li>
+</ul>
+
+<h3>📍 Aristóteles e a ética da virtude</h3>
+<p>
+Para Aristóteles, o objetivo da vida humana é a <strong>eudaimonia</strong> (felicidade plena). Essa felicidade não é prazer momentâneo, mas uma vida bem vivida baseada na virtude.
+</p>
+
+<ul>
+<li>virtude = hábito de agir bem</li>
+<li>justo meio = equilíbrio entre extremos</li>
+<li>razão deve orientar as ações</li>
+</ul>
+
+<h3>⚖️ Ética x Moral</h3>
+<p>
+A moral refere-se ao conjunto de costumes, normas e valores de um grupo social. Já a ética é a reflexão crítica sobre essas normas.
+</p>
+
+<ul>
+<li><strong>Moral:</strong> prática, costumeira, cultural</li>
+<li><strong>Ética:</strong> teórica, reflexiva, crítica</li>
+</ul>
+
+<h3>🧩 Senso moral e consciência moral</h3>
+<p>
+O senso moral é a reação imediata diante de situações do cotidiano, enquanto a consciência moral envolve reflexão racional e justificativa das ações.
+</p>
+
+<h3>❗ Dilemas éticos contemporâneos</h3>
+<ul>
+<li>bioética e manipulação genética</li>
+<li>privacidade digital</li>
+<li>uso de inteligência artificial</li>
+<li>desigualdades sociais</li>
+<li>direitos humanos</li>
+</ul>
+
+<h3>🎯 Ética como projeto de vida</h3>
+<p>
+A ética orienta a construção de uma vida responsável e consciente, contribuindo para uma sociedade mais justa, democrática e solidária.
+</p>
+
+<div class="mapa">
+ÉTICA — ESSÊNCIA E COTIDIANO
+│
+├── Fundamentos da ética
+├── Aristóteles e virtude
+├── Ética x Moral
+├── Senso e Consciência
+├── Dilemas contemporâneos
+└── Projeto de vida
+</div>
+
+<div class="mindmap">
+  <div class="node">Ética</div>
+  <div class="level">
+    <div class="child">Fundamentos</div>
+    <div class="child">Aristóteles</div>
+    <div class="child">Ética x Moral</div>
+    <div class="child">Consciência</div>
+    <div class="child">Dilemas</div>
+    <div class="child">Projeto</div>
+  </div>
+</div>
+
+</div>
+
+<!-- ================= UNIDADE 2 ================= -->
+<button class="section-btn" onclick="toggle('u2')">
+📗 Unidade 2 — Atuação profissional ética
+</button>
+
+<div id="u2" class="content">
+
+<div class="turbo">
+<strong>⚡ Resumo Turbo:</strong><br>
+Profissional ético = técnica + responsabilidade •  
+Normas organizam o trabalho •  
+Era digital traz riscos éticos
+</div>
+
+<h3>💼 Profissional e responsabilidade social</h3>
+<p>
+O profissional contemporâneo deve compreender que sua atuação possui impacto direto na sociedade. Por isso, competência técnica e responsabilidade ética devem caminhar juntas.
+</p>
+
+<ul>
+<li>compromisso com a sociedade</li>
+<li>respeito às normas</li>
+<li>transparência nas ações</li>
+<li>responsabilidade pelos resultados</li>
+</ul>
+
+<h3>🚨 Função das normas no trabalho</h3>
+<p>
+As normas profissionais (códigos de ética, leis e regulamentos) organizam o ambiente de trabalho e estabelecem padrões de conduta.
+</p>
+
+<ul>
+<li>evitam abusos</li>
+<li>promovem confiança</li>
+<li>garantem justiça</li>
+<li>protegem usuários e profissionais</li>
+</ul>
+
+<h3>⚖️ Dilemas éticos profissionais</h3>
+<p>
+O avanço tecnológico e a competitividade do mercado aumentaram a complexidade das decisões profissionais.
+</p>
+
+<ul>
+<li>pressão por produtividade</li>
+<li>corrupção</li>
+<li>uso indevido de dados</li>
+<li>assédio</li>
+<li>conflito de interesses</li>
+</ul>
+
+<h3>🌐 Impactos da sociedade digital</h3>
+<p>
+A transformação digital trouxe benefícios, mas também desafios éticos importantes.
+</p>
+
+<ul>
+<li>big data</li>
+<li>inteligência artificial</li>
+<li>automação do trabalho</li>
+<li>vigilância digital</li>
+<li>fake news</li>
+</ul>
+
+<h3>🧠 Papel do profissional na era digital</h3>
+<ul>
+<li>agir com responsabilidade informacional</li>
+<li>proteger dados pessoais</li>
+<li>usar tecnologia de forma ética</li>
+<li>avaliar impactos sociais</li>
+<li>promover inclusão digital</li>
+</ul>
+
+<div class="mapa">
+ATUAÇÃO PROFISSIONAL ÉTICA
+│
+├── Responsabilidade social
+├── Normas profissionais
+├── Dilemas éticos
+├── Sociedade digital
+└── Papel do profissional
+</div>
+
+<div class="mindmap">
+  <div class="node">Ética Profissional</div>
+  <div class="level">
+    <div class="child">Responsabilidade</div>
+    <div class="child">Normas</div>
+    <div class="child">Dilemas</div>
+    <div class="child">Tecnologia</div>
+    <div class="child">Impacto social</div>
+   </div>
+</div>
+
+</div>
+
+<!-- ================= FLASHCARDS ================= -->
+<button class="section-btn" onclick="toggle('flash')">
+🎴 Flashcards para prova
+</button>
+
+<div id="flash" class="content">
+
+
+<h3>📘 Flashcards — Unidade 1</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é ética?</div>
+    <div class="card-face card-back">Reflexão racional sobre o comportamento humano visando o bem comum.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é moral?</div>
+    <div class="card-face card-back">Conjunto de costumes, normas e valores de um grupo social.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Ética x Moral</div>
+    <div class="card-face card-back">Moral são as regras; ética é a reflexão crítica sobre essas regras.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Objetivo da ética para Aristóteles</div>
+    <div class="card-face card-back">Alcançar a eudaimonia (felicidade plena).</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é virtude?</div>
+    <div class="card-face card-back">Hábito de agir corretamente buscando o equilíbrio (justo meio).</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é senso moral?</div>
+    <div class="card-face card-back">Reação imediata e emocional diante de situações do cotidiano.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é consciência moral?</div>
+    <div class="card-face card-back">Reflexão racional que analisa e justifica nossas ações.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Função da ética na sociedade</div>
+    <div class="card-face card-back">Promover convivência justa e orientar decisões responsáveis.</div>
+  </div>
+</div>
+
+</div>
+
+<h3 style="margin-top:30px;">📗 Flashcards — Unidade 2</h3>
+
+<div class="flash-grid">
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Profissional ético é…</div>
+    <div class="card-face card-back">Quem alia competência técnica à responsabilidade social.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Para que servem os códigos de ética?</div>
+    <div class="card-face card-back">Orientar condutas profissionais e garantir confiança nas relações.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Função das normas no trabalho</div>
+    <div class="card-face card-back">Evitar abusos, organizar a convivência e proteger direitos.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Exemplo de dilema ético profissional</div>
+    <div class="card-face card-back">Pressão por resultados versus responsabilidade social.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Principal risco da era digital</div>
+    <div class="card-face card-back">Violação de privacidade e uso indevido de dados.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">O que é responsabilidade informacional?</div>
+    <div class="card-face card-back">Uso ético, seguro e consciente das informações e dados.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Nem tudo que é ___ é ético</div>
+    <div class="card-face card-back">legal.</div>
+  </div>
+</div>
+
+<div class="flashcard" onclick="flip(this)">
+  <div class="card-inner">
+    <div class="card-face card-front">Papel do profissional na era digital</div>
+    <div class="card-face card-back">Avaliar impactos sociais e usar tecnologia com responsabilidade.</div>
+  </div>
+</div>
+
+</div>
+<script>
+function toggle(id){
+  const el = document.getElementById(id);
+  if(!el) return;
+
+  const isHidden = window.getComputedStyle(el).display === "none";
+  el.style.display = isHidden ? "block" : "none";
+}
+
+function toggleDark(){
+  document.body.classList.toggle("dark");
+}
+
+function voltar(){
+  window.location.href = "index.html";
+}
+
+window.onscroll = () => {
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
+  const bar = document.getElementById("progress");
+  if(bar) bar.style.width = scrolled + "%";
+};
+
+function buscar(){
+  const termo = document.getElementById("busca").value.toLowerCase();
+  document.querySelectorAll(".content").forEach(sec=>{
+    sec.innerHTML = sec.innerHTML.replace(/<span class="highlight">(.*?)<\/span>/g,"$1");
+    if(termo.length>2){
+      const regex = new RegExp(`(${termo})`,"gi");
+      sec.innerHTML = sec.innerHTML.replace(regex,'<span class="highlight">$1</span>');
+    }
+  });
+}
+
+function flip(el){
+  el.classList.toggle("flip");
+}
+</script>
+</body>
+</html>
