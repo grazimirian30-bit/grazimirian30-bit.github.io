@@ -1,0 +1,252 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Quiz Sistemas de Informação</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+}
+
+.question {
+    background: #1e293b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.result {
+    margin-top: 10px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Quiz Completo - Sistemas de Informação</h1>
+
+<!-- PERGUNTA 1 -->
+<div class="question">
+<p><b>Pergunta 1</b></p>
+
+<p>No contexto da transformação digital, assinale a alternativa correta.</p>
+
+<input type="radio" name="q1" value="a"> Refere-se apenas à digitalização de documentos físicos.<br>
+<input type="radio" name="q1" value="b"> Está restrita à adoção de redes sociais corporativas.<br>
+<input type="radio" name="q1" value="c"> Envolve mudanças tecnológicas que impactam processos e modelos de negócio.<br>
+<input type="radio" name="q1" value="d"> Ocorre somente em empresas de tecnologia.<br>
+
+<div id="r1" class="result"></div>
+</div>
+
+<!-- PERGUNTA 2 -->
+<div class="question">
+<p><b>Pergunta 2</b></p>
+
+<p>Analise:</p>
+
+<p>I. Dados são fatos brutos.</p>
+<p>II. Informação corresponde a dados organizados e significativos.</p>
+
+<p>Assinale a alternativa correta:</p>
+
+<input type="radio" name="q2" value="a"> As duas são verdadeiras, e II justifica I.<br>
+<input type="radio" name="q2" value="b"> As duas são verdadeiras, mas II não justifica I.<br>
+<input type="radio" name="q2" value="c"> I é verdadeira e II é falsa.<br>
+<input type="radio" name="q2" value="d"> I é falsa e II é verdadeira.<br>
+
+<div id="r2" class="result"></div>
+</div>
+
+<!-- PERGUNTA 3 -->
+<div class="question">
+<p><b>Pergunta 3</b></p>
+
+<p>Um Sistema de Informações Gerenciais (SIG) tem como principal finalidade:</p>
+
+<input type="radio" name="q3" value="a"> Executar controle direto de hardware.<br>
+<input type="radio" name="q3" value="b"> Registrar transações operacionais rotineiras.<br>
+<input type="radio" name="q3" value="c"> Apoiar decisões gerenciais por meio de relatórios e análises.<br>
+<input type="radio" name="q3" value="d"> Substituir totalmente os sistemas estratégicos.<br>
+
+<div id="r3" class="result"></div>
+</div>
+
+<!-- PERGUNTA 4 -->
+<div class="question">
+<p><b>Pergunta 4</b></p>
+
+<p>Sobre Engenharia de Software:</p>
+
+<p>I. Aplica abordagem sistemática ao desenvolvimento de software.</p>
+<p>II. Busca garantir qualidade, custo aceitável e gerenciamento do processo.</p>
+
+<p>Assinale a alternativa correta:</p>
+
+<input type="radio" name="q4" value="a"> I e II verdadeiras, e II justifica I.<br>
+<input type="radio" name="q4" value="b"> I e II verdadeiras, mas II não justifica I.<br>
+<input type="radio" name="q4" value="c"> I verdadeira e II falsa.<br>
+<input type="radio" name="q4" value="d"> I falsa e II verdadeira.<br>
+
+<div id="r4" class="result"></div>
+</div>
+
+<!-- PERGUNTA 5 -->
+<div class="question">
+<p><b>Pergunta 5</b></p>
+
+<p>Assinale a alternativa que apresenta corretamente as camadas da engenharia de software.</p>
+
+<input type="radio" name="q5" value="a"> Processo, Métodos e Ferramentas.<br>
+<input type="radio" name="q5" value="b"> Hardware, Pessoas e Dados.<br>
+<input type="radio" name="q5" value="c"> Planejamento, Execução e Monitoramento.<br>
+<input type="radio" name="q5" value="d"> Entrada, Processamento e Saída.<br>
+
+<div id="r5" class="result"></div>
+</div>
+
+<!-- PERGUNTA 6 -->
+<div class="question">
+<p><b>Pergunta 6</b></p>
+
+<p>Sobre software embarcado, é correto afirmar que:</p>
+
+<input type="radio" name="q6" value="a"> Executa exclusivamente em servidores web.<br>
+<input type="radio" name="q6" value="b"> Não possui interação com hardware.<br>
+<input type="radio" name="q6" value="c"> É utilizado apenas em aplicações científicas.<br>
+<input type="radio" name="q6" value="d"> Controla funções específicas de dispositivos ou produtos.<br>
+
+<div id="r6" class="result"></div>
+</div>
+
+<!-- PERGUNTA 7 -->
+<div class="question">
+<p><b>Pergunta 7</b></p>
+
+<p>Analise:</p>
+
+<p>I. O processo de software define a base para o gerenciamento do projeto.</p>
+<p>II. Métodos e ferramentas são aplicados dentro do processo.</p>
+
+<p>Assinale a alternativa correta:</p>
+
+<input type="radio" name="q7" value="a"> I e II falsas.<br>
+<input type="radio" name="q7" value="b"> I verdadeira e II falsa.<br>
+<input type="radio" name="q7" value="c"> I falsa e II verdadeira.<br>
+<input type="radio" name="q7" value="d"> I e II verdadeiras.<br>
+
+<div id="r7" class="result"></div>
+</div>
+
+<!-- PERGUNTA 8 -->
+<div class="question">
+<p><b>Pergunta 8</b></p>
+
+<p>Qual alternativa representa um desafio clássico da engenharia de software?</p>
+
+<input type="radio" name="q8" value="a"> Eliminar completamente a manutenção.<br>
+<input type="radio" name="q8" value="b"> Reduzir custos e melhorar a qualidade do software.<br>
+<input type="radio" name="q8" value="c"> Evitar documentação de requisitos.<br>
+<input type="radio" name="q8" value="d"> Substituir usuários por automação total.<br>
+
+<div id="r8" class="result"></div>
+</div>
+
+<!-- PERGUNTA 9 -->
+<div class="question">
+<p><b>Pergunta 9</b></p>
+
+<p>No nível operacional das organizações predominam:</p>
+
+<input type="radio" name="q9" value="a"> Sistemas de Apoio Executivo.<br>
+<input type="radio" name="q9" value="b"> Sistemas de Informações Gerenciais.<br>
+<input type="radio" name="q9" value="c"> Sistemas de Processamento de Transações.<br>
+<input type="radio" name="q9" value="d"> Sistemas de Apoio à Decisão.<br>
+
+<div id="r9" class="result"></div>
+</div>
+
+<!-- PERGUNTA 10 -->
+<div class="question">
+<p><b>Pergunta 10</b></p>
+
+<p>Sobre sistemas de informação nas organizações:</p>
+
+<p>I. Podem gerar vantagem competitiva.</p>
+<p>II. Contribuem para melhorar a tomada de decisão.</p>
+
+<p>Assinale a alternativa correta:</p>
+
+<input type="radio" name="q10" value="a"> I e II verdadeiras.<br>
+<input type="radio" name="q10" value="b"> I verdadeira e II falsa.<br>
+<input type="radio" name="q10" value="c"> I falsa e II verdadeira.<br>
+<input type="radio" name="q10" value="d"> I e II falsas.<br>
+
+<div id="r10" class="result"></div>
+</div>
+
+<button onclick="corrigir()">Ver Resultado</button>
+
+<script>
+function corrigir(){
+
+let respostas = {
+q1:"c", q2:"b", q3:"c", q4:"a", q5:"a",
+q6:"d", q7:"d", q8:"b", q9:"c", q10:"a"
+};
+
+let explicacoes = {
+q1:"Transformação digital envolve mudança real no negócio, não só tecnologia isolada.",
+q2:"Dados são brutos e informação é tratada; a II não explica a I, só complementa.",
+q3:"SIG serve para apoiar decisões com relatórios e análises gerenciais.",
+q4:"As duas estão corretas e a segunda explica o objetivo da engenharia de software.",
+q5:"As três camadas clássicas são processo, métodos e ferramentas.",
+q6:"Software embarcado atua diretamente em dispositivos (ex: carros, micro-ondas).",
+q7:"O processo é a base e métodos/ferramentas operam dentro dele.",
+q8:"O grande desafio é equilibrar custo, qualidade e prazo.",
+q9:"O nível operacional usa sistemas de processamento de transações.",
+q10:"Sistemas ajudam decisões e geram vantagem competitiva."
+};
+
+for(let q in respostas){
+let marcada = document.querySelector(`input[name=${q}]:checked`);
+let div = document.getElementById("r"+q.replace("q",""));
+
+if(!marcada){
+div.innerHTML="⚠️ Não respondida.";
+div.style.color="yellow";
+}
+else if(marcada.value===respostas[q]){
+div.innerHTML="✅ Correto! "+explicacoes[q];
+div.style.color="lightgreen";
+}
+else{
+div.innerHTML="❌ Errado! "+explicacoes[q];
+div.style.color="red";
+}
+}
+}
+</script>
+
+</body>
+</html>
