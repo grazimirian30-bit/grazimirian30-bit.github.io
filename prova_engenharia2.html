@@ -1,0 +1,241 @@
+<button onclick="voltar()">⬅️ Voltar ao menu</button>
+
+<script>
+function voltar(){
+  window.location.href = "index.html";
+}
+</script>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Simulado Engenharia de Requisitos</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.pergunta {
+    margin-bottom: 35px;
+}
+
+.opcao {
+    display: block;
+    margin: 6px 0;
+}
+
+.correta { color: green; font-weight: bold; }
+.incorreta { color: red; }
+
+button {
+    padding: 10px;
+    background: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Simulado - Engenharia de Requisitos</h2>
+
+<form id="quiz">
+
+<!-- PERGUNTA 1 -->
+<div class="pergunta">
+<p><b>Pergunta 1</b></p>
+
+<p>
+A Engenharia de Requisitos é o processo de descobrir, analisar, documentar e verificar os requisitos de um determinado sistema. 
+Esta ação da engenharia de software se inicia durante a atividade de comunicação e continua na fase de modelagem, estabelecendo 
+assim uma base importante para o projeto e construção do software.
+</p>
+
+<p>Analise as afirmações abaixo e assinale a correta.</p>
+
+<label class="opcao"><input type="radio" name="q1" value="a">
+Na fase de Especificação, serão gerados layouts, gráficos e codificação do software que apresentem cenários de uso que representem as funcionalidades levantadas com os usuários e prontas para o uso.
+</label>
+
+<label class="opcao"><input type="radio" name="q1" value="b">
+Na etapa de levantamento de requisitos, os desenvolvedores trabalham com os usuários finais para descobrir informações sobre o domínio da aplicação e dos serviços, sem se preocupar com desempenho e restrições de hardware.
+</label>
+
+<label class="opcao"><input type="radio" name="q1" value="c">
+A engenharia de requisitos abrange as seguintes tarefas: concepção, levantamento, elaboração, negociação, especificação, codificação, testes, validação e gerenciamento de requisitos.
+</label>
+
+<label class="opcao"><input type="radio" name="q1" value="d">
+A engenharia de requisitos se inicia com os programadores do projeto e depois abordará os envolvidos no projeto como clientes e usuários, na qual serão descritos os cenários, delineadas as funções, os recursos e as restrições de projeto.
+</label>
+
+<label class="opcao"><input type="radio" name="q1" value="e">
+No documento gerado pela engenharia de requisitos, são apresentados os resultados do estudo contendo a recomendação se vale a pena dar continuidade no desenvolvimento do sistema, bem como propor mudanças no enfoque, no orçamento e no cronograma e sugerir outros requisitos de alto nível.
+</label>
+</div>
+
+<!-- PERGUNTA 2 -->
+<div class="pergunta">
+<p><b>Pergunta 2</b></p>
+
+<p>
+As declarações de serviços que o sistema deve fornecer, de como o sistema deve reagir a entradas específicas e de como o sistema deve se comportar em determinadas situações. Em alguns casos,
+</p>
+
+<label class="opcao"><input type="radio" name="q2" value="a">
+os requisitos de produto também podem explicar o que o sistema não deve fazer.
+</label>
+
+<label class="opcao"><input type="radio" name="q2" value="b">
+os requisitos não funcionais também podem explicar o que o sistema não deve fazer.
+</label>
+
+<label class="opcao"><input type="radio" name="q2" value="c">
+os requisitos de domínio também podem explicar o que o sistema não deve fazer.
+</label>
+
+<label class="opcao"><input type="radio" name="q2" value="d">
+os requisitos de software também podem explicar o que o sistema não deve fazer.
+</label>
+
+<label class="opcao"><input type="radio" name="q2" value="e">
+os requisitos funcionais também podem explicar o que o sistema não deve fazer.
+</label>
+</div>
+
+<!-- PERGUNTA 3 -->
+<div class="pergunta">
+<p><b>Pergunta 3</b></p>
+
+<p>
+Técnica de levantamento que apresenta uma forma rápida de se obter dados quando há muitos usuários para extrair as mesmas informações e quando estes podem estar em diversos locais diferentes e há dificuldade em estar em todos estes locais.
+</p>
+
+<p>Em relação ao texto acima, estamos falando de</p>
+
+<label class="opcao"><input type="radio" name="q3" value="a"> Entrevista.</label>
+<label class="opcao"><input type="radio" name="q3" value="b"> Brainstorming.</label>
+<label class="opcao"><input type="radio" name="q3" value="c"> Questionário.</label>
+<label class="opcao"><input type="radio" name="q3" value="d"> VORD.</label>
+<label class="opcao"><input type="radio" name="q3" value="e"> Workshop.</label>
+</div>
+
+<!-- PERGUNTA 4 -->
+<div class="pergunta">
+<p><b>Pergunta 4</b></p>
+
+<p>
+Quanto à análise e às técnicas de levantamento de requisitos, marque V para verdadeiro ou F para falso e, em seguida, assinale a alternativa que apresenta a sequência correta.
+</p>
+
+<p>
+( ) A equipe de desenvolvimento precisa estar preparada para mudanças durante o desenvolvimento, uma vez que os requisitos são de natureza volátil.
+</p>
+
+<p>
+( ) A evolução de requisitos ocorre no sentido do desenvolvimento de software, mudando do nível alto de abstração para a implementação.
+</p>
+
+<p>
+( ) Os requisitos podem mudar no sentido da melhoria contínua para atender a novas necessidades ou demandas.
+</p>
+
+<p>
+( ) Conhecer e gerenciar as interações entre requisitos é extremamente importante para a decomposição e para a modularização das características do sistema.
+</p>
+
+<label class="opcao"><input type="radio" name="q4" value="a"> V – V – F – V.</label>
+<label class="opcao"><input type="radio" name="q4" value="b"> F – F – F – V.</label>
+<label class="opcao"><input type="radio" name="q4" value="c"> F – V – V – F.</label>
+<label class="opcao"><input type="radio" name="q4" value="d"> V – V – V – V.</label>
+<label class="opcao"><input type="radio" name="q4" value="e"> V – F – F – F.</label>
+</div>
+
+<!-- PERGUNTA 5 -->
+<div class="pergunta">
+<p><b>Pergunta 5</b></p>
+
+<p>
+O desenvolvedor de software inicia o desenvolvimento de uma solução a partir do levantamento das necessidades dos clientes e pode partir da criação de um produto inédito ou da manutenção de um software já existente. Um Requisito é uma condição necessária para a obtenção de um certo objetivo e podem ser classificados de várias formas.
+</p>
+
+<p>Analise as afirmações a seguir:</p>
+
+<p>( ) Requisitos do usuário descrevem os requisitos funcionais e não funcionais de modo compreensível pelos usuários.</p>
+
+<p>( ) Requisitos do produto mostram o comportamento do produto, como desempenho e confiabilidade.</p>
+
+<p>( ) Requisitos organizacionais são as políticas e procedimentos adotados nas organizações.</p>
+
+<p>( ) Requisitos externos são fatores externos como requisitos legais.</p>
+
+<p>( ) Requisitos de domínio refletem as características do domínio da aplicação, sendo os requisitos já existentes e sem criar novos requisitos funcionais.</p>
+
+<label class="opcao"><input type="radio" name="q5" value="a"> V – V – V – V – F</label>
+<label class="opcao"><input type="radio" name="q5" value="b"> V – V – V – F – F</label>
+<label class="opcao"><input type="radio" name="q5" value="c"> V – V – F – V – F</label>
+<label class="opcao"><input type="radio" name="q5" value="d"> V – F – V – F – V</label>
+<label class="opcao"><input type="radio" name="q5" value="e"> F – V – V – V – F</label>
+</div>
+
+<button type="button" onclick="corrigir()">Finalizar</button>
+
+</form>
+
+<div id="resultado"></div>
+
+</div>
+
+<script>
+
+function corrigir(){
+
+let gabarito = {q1:"e", q2:"e", q3:"c", q4:"d", q5:"a"};
+let pontos = 0;
+let res = "";
+
+for(let q in gabarito){
+let marcada = document.querySelector(`input[name=${q}]:checked`);
+if(marcada && marcada.value === gabarito[q]){
+pontos++;
+res += `<p class="correta">Pergunta ${q[1]}: Correta</p>`;
+}else{
+res += `<p class="incorreta">Pergunta ${q[1]}: Incorreta</p>`;
+}
+}
+
+res += `
+<h3>Gabarito Comentado</h3>
+<p>1) Correta: alternativa E → documento avalia continuidade do sistema :contentReference[oaicite:0]{index=0}</p>
+<p>2) Correta: requisitos funcionais → descrevem comportamento</p>
+<p>3) Correta: questionário → coleta em massa</p>
+<p>4) Correta: V – V – V – V</p>
+<p>5) Correta: V – V – V – V – F</p>
+
+<h3>Pontuação: ${pontos}/5</h3>
+`;
+
+document.getElementById("resultado").innerHTML = res;
+
+}
+
+</script>
+
+</body>
+</html>
+```
