@@ -1,0 +1,280 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Questões de Alocação Dinâmica em C</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 40px;
+    line-height: 1.7;
+}
+
+.container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+h1 {
+    color: #222;
+}
+
+h2 {
+    color: #0b57d0;
+    margin-top: 50px;
+}
+
+img {
+    max-width: 100%;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+.box {
+    background: #eef5ff;
+    padding: 20px;
+    border-left: 5px solid #0b57d0;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.correct {
+    color: green;
+    font-weight: bold;
+}
+
+.code {
+    background: #272822;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin-top: 15px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Questões de Alocação Dinâmica em C</h1>
+
+<h2>Pergunta 1</h2>
+
+<p>
+Considere o trecho de código em C abaixo:
+</p>
+
+<img src="PastedImage_6414000fa63a4099a33090a3826778d2_image.png">
+
+<p>
+Com base no código acima, analise as afirmativas:
+</p>
+
+<ul>
+<li>I. A função malloc aloca um bloco de memória suficiente para armazenar um array de inteiros com “tamanho” de elementos.</li>
+<li>II. A função preencherArray recebe um ponteiro como parâmetro e pode modificar diretamente o conteúdo da memória alocada dinamicamente.</li>
+<li>III. A função free libera a memória alocada, garantindo que o ponteiro arr seja automaticamente redefinido para NULL.</li>
+<li>IV. Caso a alocação de memória falhe, o ponteiro arr será igual a NULL e o programa exibirá uma mensagem de erro.</li>
+</ul>
+
+<p><strong>Alternativas:</strong></p>
+
+<ul>
+<li><span class="correct">I, II e IV, apenas.</span></li>
+<li>I, II e III, apenas.</li>
+<li>II, III e IV, apenas.</li>
+<li>I e II, apenas.</li>
+<li>I, II, III e IV.</li>
+</ul>
+
+<div class="box">
+
+<p><strong>Resposta correta:</strong></p>
+
+<p class="correct">
+I, II e IV, apenas.
+</p>
+
+<p><strong>Explicação:</strong></p>
+
+<ul>
+<li>A malloc realmente aloca memória dinamicamente.</li>
+<li>A função preencherArray modifica diretamente os valores do array.</li>
+<li>free() libera memória, mas NÃO redefine automaticamente o ponteiro para NULL.</li>
+<li>Quando malloc falha, retorna NULL.</li>
+</ul>
+
+<div class="code">
+arr = (int *)malloc(tamanho * sizeof(int));
+</div>
+
+</div>
+
+<h2>Pergunta 2</h2>
+
+<p>
+A alocação dinâmica de memória permite que um programa reserve espaço em tempo de execução.
+Determine qual função é utilizada para alocar dinamicamente um bloco de memória.
+</p>
+
+<p><strong>Alternativas:</strong></p>
+
+<ul>
+<li>realloc()</li>
+<li>scanf()</li>
+<li>free()</li>
+<li><span class="correct">malloc()</span></li>
+<li>sizeof()</li>
+</ul>
+
+<div class="box">
+
+<p><strong>Resposta correta:</strong></p>
+
+<div class="code">
+malloc()
+</div>
+
+<p><strong>Explicação:</strong></p>
+
+<p>
+malloc() reserva um bloco de memória dinamicamente durante a execução do programa.
+</p>
+
+</div>
+
+<h2>Pergunta 3</h2>
+
+<p>
+Indique qual função é responsável por alocar dinamicamente um bloco de memória e inicializar todos os seus bytes com zero.
+</p>
+
+<p><strong>Alternativas:</strong></p>
+
+<ul>
+<li>sizeof()</li>
+<li>scanf()</li>
+<li><span class="correct">calloc()</span></li>
+<li>malloc()</li>
+<li>realloc()</li>
+</ul>
+
+<div class="box">
+
+<p><strong>Resposta correta:</strong></p>
+
+<div class="code">
+calloc()
+</div>
+
+<p><strong>Explicação:</strong></p>
+
+<ul>
+<li>calloc() aloca memória dinamicamente.</li>
+<li>Além disso, inicializa os bytes com zero.</li>
+<li>Diferente de malloc(), que não inicializa valores.</li>
+</ul>
+
+</div>
+
+<h2>Pergunta 4</h2>
+
+<p>
+Na linguagem C, analise as afirmações sobre a função free():
+</p>
+
+<ul>
+<li>( ) A função free() libera a memória alocada dinamicamente.</li>
+<li>( ) Após chamar free(), o ponteiro automaticamente se torna NULL.</li>
+<li>( ) É seguro acessar os dados após free().</li>
+<li>( ) Chamar malloc() libera memória alocada.</li>
+<li>( ) O uso de free() é obrigatório para variáveis estáticas.</li>
+</ul>
+
+<p><strong>Alternativas:</strong></p>
+
+<ul>
+<li>V, F, V, V, F.</li>
+<li>F, V, V, F, F.</li>
+<li>V, F, F, V, F.</li>
+<li>V, V, F, F, V.</li>
+<li><span class="correct">V, F, F, F, F.</span></li>
+</ul>
+
+<div class="box">
+
+<p><strong>Resposta correta:</strong></p>
+
+<p class="correct">
+V, F, F, F, F.
+</p>
+
+<p><strong>Explicação:</strong></p>
+
+<ul>
+<li>free() libera memória.</li>
+<li>O ponteiro NÃO vira NULL automaticamente.</li>
+<li>Acessar memória liberada é comportamento indefinido.</li>
+<li>malloc() aloca memória e não libera.</li>
+<li>Variáveis estáticas não usam free().</li>
+</ul>
+
+</div>
+
+<h2>Pergunta 5</h2>
+
+<p>
+Os ponteiros são amplamente utilizados para gerenciar memória de forma eficiente.
+Analise as asserções:
+</p>
+
+<ul>
+<li>I. Os ponteiros podem armazenar o endereço de memória de qualquer tipo de variável, incluindo estruturas.</li>
+<li>II. O tipo void* pode ser usado como ponteiro genérico.</li>
+</ul>
+
+<p><strong>Alternativas:</strong></p>
+
+<ul>
+<li><span class="correct">As asserções I e II são verdadeiras, e II justifica I.</span></li>
+<li>As asserções I e II são verdadeiras, mas II não justifica I.</li>
+<li>I é falsa e II é verdadeira.</li>
+<li>I é verdadeira e II é falsa.</li>
+<li>I e II são falsas.</li>
+</ul>
+
+<div class="box">
+
+<p><strong>Resposta correta:</strong></p>
+
+<p class="correct">
+As asserções I e II são proposições verdadeiras,
+e a II é uma justificativa correta da I.
+</p>
+
+<p><strong>Explicação:</strong></p>
+
+<ul>
+<li>void* é um ponteiro genérico.</li>
+<li>Ele pode armazenar endereço de diferentes tipos de dados.</li>
+<li>Por isso ele justifica a afirmativa I.</li>
+</ul>
+
+<div class="code">
+void *ptr;
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>
